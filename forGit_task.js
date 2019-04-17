@@ -80,19 +80,55 @@ $(document).ready(function(){
     average_indicate();
   });
 
-  //ランク判定表示
+
+  //ランク判定表示　firstchild削除
+  
+  const btnRmEvalu = document.getElementById('btn-evaluation');
+  btnRmEvalu.addEventListener('click', function(){
+  const oldEvalu = document.getElementById('evaluation');
+  while(oldEvalu.firstChild){
+  oldEvalu.removeChild(oldEvalu.firstChild);
+  }
+  },false);
+  
   $('#btn-evaluation').click(function() {
     $('#evaluation').append(`<label id="evaluation" class="btn btn-primary">${get_achievement()}</label>`);
-    //$('.text').remove();  
-  }); 
+   });
   
- // 合否判定表示
+
+
+// Get the <ul> element with id="myList"
+//let oldNode = document.getElementById("evaluation");
+
+// If the <ul> element has any child nodes, remove its first child node
+//if (list.hasChildNodes()) {
+//  list.removeChild(list.childNodes[0]);
+//}
+
+ // 合否判定表示　firstchild削除
+  const btnRmJdg = document.getElementById('btn-judge');
+  btnRmJdg.addEventListener('click', function(){
+  const oldJdg = document.getElementById('judge');
+  while(oldJdg.firstChild){
+  oldJdg.removeChild(oldJdg.firstChild);
+  }
+  },false);
+ 
   $('#btn-judge').click(function() {
     $('#judge').append(`<label id="judge" class="btn btn-success">${get_pass_or_failure()}</label>`);
   });
 
   
- //最終結果表示
+ //最終結果表示 firstchild削除
+ 
+  const btnDcl = document.getElementById('btn-declaration');
+  btnDcl.addEventListener('click', function(){
+  const oldDcl = document.getElementById('declaration');
+  while(oldDcl.firstChild){
+  oldDcl.removeChild(oldDcl.firstChild);
+  }
+  },false);
+ 
   $('#btn-declaration').click(function() {
    judgement();
    //$('#declaration').append(`<label id="declaration" class="btn btn-warning">あなたの成績は${get_achievement()}です。${get_pass_or_failure()}です</label>`);
